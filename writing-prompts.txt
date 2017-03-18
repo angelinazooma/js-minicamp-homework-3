@@ -1,0 +1,99 @@
+Writing Prompts
+
+** Objects
+
+an object is similar to an array, in that it stores data that is connected. The difference between the two types of data storage is that an array can only be references by it's location in the array (ie: arr[2] will get the 3rd item in the array)
+
+An object's values are referenced by a word, or key..  so you can call user['username'] also written as user.username
+
+you can store any kind of data in an object, including functions
+
+
+
+................................
+** Properties
+
+properties on an object are the specific key and value pairs applied to that object. They are the same as setting a variable, but inside that object
+
+var name = "bob";
+
+var user = {
+	name: "bob"
+}
+
+console.log(name);
+
+console.log(user.name);
+
+these will log the same value.
+
+
+
+................................
+** Methods
+
+a method is a function (reusable named bit of code) that is stored inside of an object
+
+
+
+................................
+** for in loop
+
+a way of running through your object and doing stuff with the properties stored within
+
+
+................................
+** dot notation vs bracket notation
+
+when calling your object's properties, you can't dynamically use the key using the dot notation.. so in a loop you need to use the square bracket notation (note: why wouldn't you always use square braket notation??)
+
+..
+
+in testing, the delete action does not work if you use square bracket notation, so I am assuming other actions will not work using it as well.
+
+..
+
+so only use bracket notation when you need to dynamically grab the property by it's key.. otherwise use dot
+
+
+
+
+...............................
+
+practice object inside an array
+
+
+var cats = [
+  
+  {
+    name: "seamus",
+    nickname: "shithead",
+    longHair: true,
+    deClawed: false,
+    sex: "female",
+    age: 3,
+    keyStatement: function() {
+      var sentence = this.name + ' is also known as ' + this.nickname;
+      console.log(sentence);
+    }
+  },
+  
+  
+  {
+    name: "sausage",
+    nickname: "poor little sausage",
+    longHair: false,
+    deClawed: true,
+    sex: "female",
+    age: 15,
+    keyStatement: function() {
+      var sentence = this.name + ' is also known as ' + this.nickname;
+      console.log(sentence);
+    }
+  }
+  
+]
+
+
+cats[1].keyStatement();
+// will print "sause is also known as poor little sausage"
